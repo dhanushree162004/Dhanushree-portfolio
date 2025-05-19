@@ -1,261 +1,261 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleBtn = document.getElementById('theme-toggle');
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Theme Toggle ---
+    const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    const navMenu = document.getElementById('nav-menu');
-    const navToggler = document.getElementById('nav-toggler');
-        const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('.section');
-const navbar = document.getElementById('navbar');
-const backToTopButton = document.getElementById('back-to-top');
+    const themeIcon = themeToggle.querySelector('i');
 
-    // --- Theme Toggler ---
-    // ... (existing theme toggler code) ...
-    const currentTheme = localStorage.getItem('theme');
-    const themeIcon = themeToggleBtn.querySelector('i');
-
-    if (currentTheme) {
-        body.classList.add(currentTheme);
-        if (currentTheme === 'dark-theme') {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-    } else { // Default to light if no preference or if preference is light
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
-        let theme = 'light-theme';
-        if (body.classList.contains('dark-theme')) {
-            theme = 'dark-theme';
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.remove('light-theme', 'dark-theme');
+        body.classList.add(savedTheme);
+        if (savedTheme === 'dark-theme') {
             themeIcon.classList.remove('fa-moon');
             themeIcon.classList.add('fa-sun');
         } else {
             themeIcon.classList.remove('fa-sun');
             themeIcon.classList.add('fa-moon');
         }
-        localStorage.setItem('theme', theme);
-        // Re-initialize particles with potentially new colors if needed, or use adaptive colors in config
-        loadParticles();
-    });
+    } else { // Default to light theme if nothing saved
+        body.classList.add('light-theme');
+        themeIcon.classList.add('fa-moon');
+    }
 
 
-    // --- Mobile Navigation Toggle ---
-    // ... (existing mobile nav code) ...
-    navToggler.addEventListener('click', () => {
-        navMenu.classList.toggle('nav-active');
-        const icon = navToggler.querySelector('i');
-        if (navMenu.classList.contains('nav-active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light-theme')) {
+            body.classList.replace('light-theme', 'dark-theme');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark-theme');
         } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            body.classList.replace('dark-theme', 'light-theme');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light-theme');
         }
     });
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('nav-active')) {
-                navMenu.classList.remove('nav-active');
-                navToggler.querySelector('i').classList.remove('fa-times');
-                navToggler.querySelector('i').classList.add('fa-bars');
+    // --- Mobile Navigation Toggle ---
+    const navToggler = document.getElementById('nav-toggler');
+    const navMenuMobile = document.getElementById('nav-menu-mobile');
+    const navTogglerIcon = navToggler.querySelector('i');
+
+    if (navToggler && navMenuMobile) {
+        navToggler.addEventListener('click', () => {
+            navMenuMobile.classList.toggle('hidden');
+            const isExpanded = navMenuMobile.classList.contains('hidden') ? 'false' : 'true';
+            navToggler.setAttribute('aria-expanded', isExpanded);
+            if (isExpanded === 'true') {
+                navTogglerIcon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                navTogglerIcon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+    }
+    
+    // --- Smooth Scroll & Active Link Highlighting ---
+    const navbar = document.getElementById('navbar');
+    const navbarHeight = navbar ? navbar.offsetHeight : 70; // Fallback height
+    const allNavLinks = document.querySelectorAll('.nav-link'); // For desktop and mobile
+
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - navbarHeight - 20; // Extra 20px padding
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile nav if open and it's a mobile link click
+                    if (navMenuMobile && !navMenuMobile.classList.contains('hidden')) {
+                        navMenuMobile.classList.add('hidden');
+                        navToggler.setAttribute('aria-expanded', 'false');
+                        navTogglerIcon.classList.replace('fa-times', 'fa-bars');
+                    }
+                }
             }
         });
     });
-
-    // --- Active Link Highlighting on Scroll ---
-    // ... (existing active link code) ...
-    function highlightActiveLink() {
+    
+    // Active link highlighting on scroll
+    const sections = document.querySelectorAll('section.section'); // Ensure your sections have class 'section'
+    function changeLinkState() {
         let currentSectionId = '';
-        const navbarHeight = navbar.offsetHeight;
-
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - navbarHeight - 50;
-            if (window.scrollY >= sectionTop) {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - navbarHeight - 25) { // Adjusted offset
                 currentSectionId = section.getAttribute('id');
             }
         });
-        
-        if (window.scrollY < sections[0].offsetTop - navbarHeight - 50) {
-             currentSectionId = "home";
-        }
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
+        allNavLinks.forEach(link => {
+            link.classList.remove('active'); // 'active' class defined in CSS
             if (link.getAttribute('href') === `#${currentSectionId}`) {
                 link.classList.add('active');
             }
         });
-    }
-    window.addEventListener('scroll', highlightActiveLink);
-    
-
-    // --- Back to Top Button ---
-    // ... (existing back to top code) ...
-        window.addEventListener('scroll', () => {
-if (window.scrollY > 300) {
-backToTopButton.classList.add('active');
-} else {
-backToTopButton.classList.remove('active');
-}
-});
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-
-    // --- Footer Current Year ---
-    // ... (existing footer year code) ...
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    // --- Navbar Scroll Effect ---
-    // ... (existing navbar scroll code) ...
-        window.addEventListener('scroll', () => {
-if (window.scrollY > 50) {
-navbar.classList.add('scrolled');
-} else {
-navbar.classList.remove('scrolled');
-}
-});
-
-    // --- tsParticles Initialization ---
-    function getParticleColors() {
-        const isDarkMode = body.classList.contains('dark-theme');
-        // Using getComputedStyle to fetch CSS variable values
-        const styles = getComputedStyle(document.documentElement);
-        const primaryColor = styles.getPropertyValue('--primary-color').trim();
-        const textColor = styles.getPropertyValue('--text-color').trim();
-        
-        return {
-            particleColor: isDarkMode ? "#777" : "#bbb", // Lighter for dark, darker for light
-            linkColor: isDarkMode ? primaryColor : primaryColor // Or a more neutral like "#999"
-        };
-    }
-
-    async function loadParticles() {
-        const colors = getParticleColors();
-
-        if (window.tsParticles && typeof window.tsParticles.load === 'function') {
-             // Destroy existing instance if it exists, to prevent multiple instances
-            const existingContainer = tsParticles.domItem(0); // Or pass the specific container ID
-            if (existingContainer) {
-                existingContainer.destroy();
-            }
-
-            await tsParticles.load({
-                id: "tsparticles-hero", // The ID of the div you added
-                options: {
-                    autoPlay: true,
-                    background: {
-                        // color: { value: "transparent" } // Make background transparent so CSS bg shows
-                    },
-                    fpsLimit: 60,
-                    interactivity: {
-                        events: {
-                            onClick: {
-                                enable: true,
-                                mode: "push", // Adds particles on click
-                            },
-                            onHover: {
-                                enable: true,
-                                mode: "grab", // Creates links on hover
-                            },
-                        },
-                        modes: {
-                            push: {
-                                quantity: 4,
-                            },
-                            repulse: {
-                                distance: 150,
-                                duration: 0.4,
-                            },
-                            grab: {
-                                distance: 200,
-                                links: {
-                                    opacity: 0.5
-                                }
-                            }
-                        },
-                    },
-                    particles: {
-                        color: {
-                            value: colors.particleColor,
-                        },
-                        links: {
-                            color: colors.linkColor,
-                            distance: 150,
-                            enable: true,
-                            opacity: 0.4,
-                            width: 1,
-                        },
-                        collisions: {
-                            enable: false, // True if you want them to bounce off each other
-                        },
-                        move: {
-                            direction: "none",
-                            enable: true,
-                            outModes: {
-                                default: "bounce", // How particles behave when they reach the edge
-                            },
-                            random: false,
-                            speed: 2, // Movement speed
-                            straight: false,
-                        },
-                        number: {
-                            density: {
-                                enable: true,
-                                area: 800, // Lower value means more particles
-                            },
-                            value: 80, // Number of particles
-                        },
-                        opacity: {
-                            value: 0.5,
-                        },
-                        shape: {
-                            type: "circle",
-                        },
-                        size: {
-                            value: { min: 1, max: 3 }, // Particles will have random sizes between 1 and 3
-                        },
-                    },
-                    detectRetina: true, // Better rendering on high-density screens
-                    // Responsive settings (optional, the density setting already helps)
-                    // responsive: [
-                    //     {
-                    //         breakpoint: 768, // Below 768px
-                    //         options: {
-                    //             particles: {
-                    //                 number: {
-                    //                     value: 50,
-                    //                     density: { area: 600 }
-                    //                 },
-                    //                 links: { distance: 120 }
-                    //             }
-                    //         }
-                    //     },
-                    //     {
-                    //         breakpoint: 480, // Below 480px
-                    //         options: {
-                    //             particles: {
-                    //                 number: {
-                    //                     value: 30,
-                    //                     density: { area: 400 }
-                    //                 },
-                    //                 links: { distance: 100 }
-                    //             }
-                    //         }
-                    //     }
-                    // ]
-                },
-            });
-        } else {
-            console.error("tsParticles library not loaded.");
+        // Ensure home is active if at the very top
+        if (window.pageYOffset < sections[0].offsetTop - navbarHeight - 25) {
+             allNavLinks.forEach(link => link.classList.remove('active'));
+             document.querySelector('.nav-link[href="#home"]')?.classList.add('active');
         }
     }
+    if (sections.length > 0) {
+        window.addEventListener('scroll', changeLinkState);
+        changeLinkState(); // Initial call
+    }
 
-    loadParticles(); // Load particles on initial page load
-    highlightActiveLink(); // Call on load for active link
+
+    // --- Update current year in footer ---
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+
+    // --- Back to Top Button ---
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden', 'opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+                setTimeout(() => { // Ensure it's hidden after transition
+                    if (window.pageYOffset <= 300) backToTopButton.classList.add('hidden');
+                }, 300);
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // --- tsParticles Initialization ---
+    const heroParticlesElement = document.getElementById('tsparticles-hero');
+    if (typeof tsParticles !== 'undefined' && heroParticlesElement) {
+        tsParticles.load("tsparticles-hero", {
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: { enable: true, mode: "grab" },
+                    onClick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    grab: { distance: 140, links: { opacity: 0.7 } },
+                    push: { quantity: 3 }
+                }
+            },
+            particles: {
+                color: { value: "#ffffff" },
+                links: {
+                    color: "#ffffff",
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.25, // Subtle links
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5, // Slower, more elegant movement
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    outModes: "out"
+                },
+                number: {
+                    density: { enable: true, area: 800 },
+                    value: 50 // Fewer particles for a cleaner look
+                },
+                opacity: {
+                    value: {min: 0.1, max: 0.5} // Random opacity for depth
+                },
+                shape: { type: "circle" },
+                size: {
+                    value: { min: 1, max: 3 } // Small, consistent particle size
+                }
+            },
+            detectRetina: true,
+            background: {
+                // color: "transparent" // Ensure it doesn't override section background
+            }
+        }).then(container => {
+            // console.log("tsparticles container loaded for hero");
+        }).catch(error => {
+            console.error("tsparticles hero loading error:", error);
+        });
+    }
+
+    // --- Contact Form Submission (AJAX for Formspree) ---
+    const contactForm = document.getElementById('contactForm');
+    const formStatusDiv = document.getElementById('form-status'); // Optional: for displaying messages outside alerts
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML; // Save original button content
+
+            // Change button text to indicate processing
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="spinner-border" role="status" aria-hidden="true"></span> Sending...';
+            
+            if(formStatusDiv) formStatusDiv.innerHTML = ''; // Clear previous status
+
+            fetch(contactForm.action, { // Use form's action attribute for the URL
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json' // Important for Formspree to return JSON
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                // If response not OK, try to parse error or throw generic error
+                return response.json().then(errorData => {
+                    throw new Error(errorData.error || 'Something went wrong. Please try again.');
+                });
+            })
+            .then(data => {
+                if (data.ok) {
+                    if(formStatusDiv) {
+                        formStatusDiv.textContent = "Message sent successfully! Thank you for reaching out.";
+                        formStatusDiv.className = 'success text-green-600 dark:text-green-400';
+                    } else {
+                        alert("Message sent successfully! Thank you for reaching out.");
+                    }
+                    contactForm.reset(); // Clear the form fields
+                } else {
+                    throw new Error(data.error || 'Failed to send message. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error("Form submission error:", error);
+                if(formStatusDiv) {
+                    formStatusDiv.textContent = `Error: ${error.message}`;
+                    formStatusDiv.className = 'error text-red-600 dark:text-red-400';
+                } else {
+                    alert(`Error: ${error.message}`);
+                }
+            })
+            .finally(() => {
+                // Restore button text and enable it
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText; // Restore original content
+            });
+        });
+    }
 });
