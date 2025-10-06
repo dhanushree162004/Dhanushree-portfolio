@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class=""> <head>
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhanushree Thiruveragan - Portfolio</title>
@@ -31,7 +34,8 @@
 
         /* Section scroll margin for fixed navbar */
         section[id] {
-            scroll-margin-top: 70px; /* Adjust based on actual navbar height */
+            scroll-margin-top: 70px;
+            /* Adjust based on actual navbar height */
         }
 
         /* Custom spinner for form submission button */
@@ -49,16 +53,22 @@
         }
 
         @-webkit-keyframes spinner-border {
-            to { -webkit-transform: rotate(360deg); }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
         }
+
         @keyframes spinner-border {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Form status messages */
         #form-status.success {
             @apply text-green-600 dark:text-green-400;
         }
+
         #form-status.error {
             @apply text-red-600 dark:text-red-400;
         }
@@ -72,7 +82,9 @@
             height: 100%;
             z-index: 0;
         }
-        .hero-content { /* Ensure hero content is above particles */
+
+        .hero-content {
+            /* Ensure hero content is above particles */
             position: relative;
             z-index: 1;
         }
@@ -92,183 +104,280 @@
         }
     </script>
 </head>
-<body> <header id="navbar" class="sticky top-0 z-50 shadow-md bg-white dark:bg-gray-800 transition-colors duration-300">
+
+<body>
+    <header id="navbar" class="sticky top-0 z-50 shadow-md bg-white dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#home" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Dhanushree Thiruveragan</a>
+                <a href="#home" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Dhanushree
+                    Thiruveragan</a>
                 <nav class="hidden md:flex space-x-1" id="nav-menu-desktop">
-                    <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
-                    <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
-                    <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
-                    <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
-                    <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+                    <a href="#home"
+                        class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                    <a href="#about"
+                        class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+                    <a href="#skills"
+                        class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
+                    <a href="#projects"
+                        class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
+                    <a href="#contact"
+                        class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
                 </nav>
                 <div class="flex items-center space-x-3">
-                    <button class="theme-toggle-btn p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" id="theme-toggle" aria-label="Toggle theme">
+                    <button
+                        class="theme-toggle-btn p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                        id="theme-toggle" aria-label="Toggle theme">
                         <i class="fas fa-moon"></i> </button>
-                    <button class="nav-toggler md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="nav-toggler" aria-label="Toggle navigation" aria-expanded="false">
+                    <button
+                        class="nav-toggler md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        id="nav-toggler" aria-label="Toggle navigation" aria-expanded="false">
                         <i class="fas fa-bars"></i> </button>
                 </div>
             </div>
             <nav class="md:hidden hidden" id="nav-menu-mobile">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
-                    <a href="#about" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
-                    <a href="#skills" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
-                    <a href="#projects" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
-                    <a href="#contact" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+                    <a href="#home"
+                        class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                    <a href="#about"
+                        class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+                    <a href="#skills"
+                        class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
+                    <a href="#projects"
+                        class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
+                    <a href="#contact"
+                        class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero-section section min-h-screen flex items-center justify-center relative py-16 md:py-24 bg-gradient-to-br from-indigo-600 to-purple-600 dark:from-indigo-800 dark:to-purple-800 text-white overflow-hidden">
-            <div id="tsparticles-hero"></div> <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center hero-content">
-                <span class="hero-subheading block text-lg sm:text-xl font-medium uppercase tracking-wider mb-2 text-indigo-200 dark:text-indigo-300">HELLO, I AM</span>
+        <section id="home"
+            class="hero-section section min-h-screen flex items-center justify-center relative py-16 md:py-24 bg-gradient-to-br from-indigo-600 to-purple-600 dark:from-indigo-800 dark:to-purple-800 text-white overflow-hidden">
+            <div id="tsparticles-hero"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center hero-content">
+                <span
+                    class="hero-subheading block text-lg sm:text-xl font-medium uppercase tracking-wider mb-2 text-indigo-200 dark:text-indigo-300">HELLO,
+                    I AM</span>
                 <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-4">Dhanushree Thiruveragan</h1>
                 <p class="hero-tagline text-xl sm:text-2xl md:text-3xl mb-6">
-                    Aspiring <span class="highlight font-semibold text-yellow-300 dark:text-yellow-400">Data Analyst</span> & <span class="highlight font-semibold text-yellow-300 dark:text-yellow-400">Tech Enthusiast</span>
+                    Aspiring <span class="highlight font-semibold text-yellow-300 dark:text-yellow-400">Data
+                        Analyst</span> & <span class="highlight font-semibold text-yellow-300 dark:text-yellow-400">Tech
+                        Enthusiast</span>
                 </p>
-                <p class="hero-description max-w-2xl mx-auto text-base sm:text-lg text-indigo-100 dark:text-indigo-200 mb-8">
+                <p
+                    class="hero-description max-w-2xl mx-auto text-base sm:text-lg text-indigo-100 dark:text-indigo-200 mb-8">
                     Passionate about building innovative solutions and continuously learning new technologies.
                 </p>
-                <div class="hero-buttons flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-10">
-                    <a href="#projects" class="btn btn-primary bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-8 rounded-lg shadow-lg transform transition-transform duration-150 hover:scale-105">View My Work</a>
-                    <a href="#contact-form-section" class="btn btn-secondary bg-white hover:bg-gray-100 text-indigo-700 font-semibold py-3 px-8 rounded-lg shadow-lg transform transition-transform duration-150 hover:scale-105">Hire Me</a>
+                <div
+                    class="hero-buttons flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-10">
+                    <a href="#projects"
+                        class="btn btn-primary bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-8 rounded-lg shadow-lg transform transition-transform duration-150 hover:scale-105">View
+                        My Work</a>
+                    <a href="#contact-form-section"
+                        class="btn btn-secondary bg-white hover:bg-gray-100 text-indigo-700 font-semibold py-3 px-8 rounded-lg shadow-lg transform transition-transform duration-150 hover:scale-105">Hire
+                        Me</a>
                 </div>
                 <div class="hero-socials flex justify-center space-x-6">
-                    <a href="https://www.linkedin.com/in/dhanushree-thiruveragan-157a49265/" target="_blank" aria-label="LinkedIn" class="text-indigo-200 hover:text-white text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/dhanushree162004" target="_blank" aria-label="GitHub" class="text-indigo-200 hover:text-white text-2xl transition-colors"><i class="fab fa-github"></i></a>
-                    <!-- <a href="https://www.instagram.com/__.dhanushree.__/" target="_blank" aria-label="Instagram" class="text-indigo-200 hover:text-white text-2xl transition-colors"><i class="fab fa-instagram"></i></a> -->
+                    <a href="https://www.linkedin.com/in/dhanushree-thiruveragan-157a49265/" target="_blank"
+                        aria-label="LinkedIn" class="text-indigo-200 hover:text-white text-2xl transition-colors"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/dhanushree162004" target="_blank" aria-label="GitHub"
+                        class="text-indigo-200 hover:text-white text-2xl transition-colors"><i
+                            class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about-section section py-16 md:py-24 bg-white dark:bg-gray-800">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">About Me</h2>
+                <h2
+                    class="section-title text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+                    About Me</h2>
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div class="about-image-container rounded-lg overflow-hidden shadow-xl">
-                        <img src="portfolio_image.jpg" alt="Dhanushree Thiruveragan" class="w-full h-auto object-cover aspect-square" onerror="this.src='https://placehold.co/600x600/cccccc/333333?text=Image+Not+Found'; this.alt='Placeholder image for Dhanushree T';">
+                        <img src="portfolio_image.jpg" alt="Dhanushree Thiruveragan"
+                            class="w-full h-auto object-cover aspect-square"
+                            onerror="this.src='https://placehold.co/600x600/cccccc/333333?text=Image+Not+Found'; this.alt='Placeholder image for Dhanushree T';">
                     </div>
                     <div class="about-text-container text-gray-700 dark:text-gray-300">
                         <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">Who I Am</h3>
                         <p class="mb-4 text-lg">
-                            Hello! I'm Dhanushree Thiruveragan, a dedicated and enthusiastic Data Analyst and aspiring Data Scientist based in Dubai. I'm deeply passionate about uncovering insights from data and leveraging Artifical Intelligence to build intelligent, impactful solutions.
+                            Hello! I'm Dhanushree Thiruveragan, a dedicated and enthusiastic Data Analyst and aspiring
+                            Data Scientist based in Dubai. I'm deeply passionate about uncovering insights from data and
+                            leveraging Artifical Intelligence to build intelligent, impactful solutions.
                         </p>
                         <p class="mb-6 text-lg">
-                            I thrive in collaborative environments and enjoy transforming complex datasets into meaningful, data-driven decisions. My journey in tech is driven by a curiosity to explore emerging technologies in data analytics, machine learning, and AI to create real-world impact. 
+                            I thrive in collaborative environments and enjoy transforming complex datasets into
+                            meaningful, data-driven decisions. My journey in tech is driven by a curiosity to explore
+                            emerging technologies in data analytics, machine learning, and AI to create real-world
+                            impact.
                         </p>
                         <ul class="space-y-2 mb-8 text-lg">
                             <li><strong>Degree:</strong> B.Tech. Computer Science & Engineering</li>
-                            <li><strong>Current Focus:</strong> Data Analytics, Data Science, Artifical Intelligence</li>
-                            <!-- <li><strong>Hobbies:</strong> Coding, Reading Tech Blogs, Exploring new AI tools</li> -->
+                            <li><strong>Current Focus:</strong> Data Analytics, Data Science, Artifical Intelligence
+                            </li>
                         </ul>
                         <div class="about-buttons flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                            <a href="#contact" class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-transform duration-150 hover:scale-105 text-center">Get In Touch</a>
-                            <a href="Resume-Dhanushree Thiruveragan .pdf" download="Resume-Dhanushree Thiruveragan .pdf" class="btn btn-secondary bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 font-semibold py-3 px-6 rounded-lg shadow-md transition-transform duration-150 hover:scale-105 text-center">Download Resume <i class="fas fa-download ml-2"></i></a>
+                            <a href="#contact"
+                                class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-transform duration-150 hover:scale-105 text-center">Get
+                                In Touch</a>
+                            <a href="Resume-Dhanushree Thiruveragan .pdf" download="Resume-Dhanushree Thiruveragan .pdf"
+                                class="btn btn-secondary bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 font-semibold py-3 px-6 rounded-lg shadow-md transition-transform duration-150 hover:scale-105 text-center">Download
+                                Resume <i class="fas fa-download ml-2"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="skills-section section py-16 md:py-24 bg-gray-100 dark:bg-gray-900">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">My Skills</h2>
-                <div class="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                        <i class="fab fa-python text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
-                        <span class="block font-semibold text-gray-700 dark:text-gray-300">Python</span>
+<section id="skills" class="skills-section section py-16 md:py-24 bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">My Skills</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12">
+
+            <div>
+                <h3 class="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300 border-b-2 border-indigo-500 pb-2">Data Analysis & BI Tools</h3>
+                <div class="flex flex-wrap gap-6">
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-chart-line text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Power BI</span>
                     </div>
-                    <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                        <i class="fab fa-table text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
-                        <span class="block font-semibold text-gray-700 dark:text-gray-300">Pandas</span>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-chart-pie text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Tableau</span>
                     </div>
-                    <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                        <i class="fab fa-database text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
-                        <span class="block font-semibold text-gray-700 dark:text-gray-300">SQL</span>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-file-excel text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Excel</span>
                     </div>
-                    <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                        <i class="fas fa-chart-line text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
-                        <span class="block font-semibold text-gray-700 dark:text-gray-300">Power BI</span>
-                    </div>
-                    <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                        <i class="fab fa-file-excel text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
-                        <span class="block font-semibold text-gray-700 dark:text-gray-300">Excel</span>
-                    </div>
-                     <!-- <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"> -->
-                        <!-- <i class="fab fa-react text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i> -->
-                        <!-- <span class="block font-semibold text-gray-700 dark:text-gray-300"></span> -->
-                    <!-- </div> -->
-                    <!-- <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"> -->
-                        <!-- <i class="fab fa-node-js text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i> -->
-                        <!-- <span class="block font-semibold text-gray-700 dark:text-gray-300">Node.js</span> -->
-                    <!-- </div> -->
-                    <!-- <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"> -->
-                        <!-- <i class="fab fa-git-alt text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i> -->
-                        <!-- <span class="block font-semibold text-gray-700 dark:text-gray-300">Git & GitHub</span> -->
-                    <!-- </div> -->
-                    <!-- <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"> -->
-                        <!-- <i class="fas fa-cogs text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i> -->
-                        <!-- <span class="block font-semibold text-gray-700 dark:text-gray-300">APIs</span> -->
-                    <!-- </div> -->
-                    <!-- <div class="skill-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"> -->
-                        <!-- <i class="fas fa-cloud text-5xl text-indigo-500 dark:text-indigo-400 mb-3"></i> -->
-                        <!-- <span class="block font-semibold text-gray-700 dark:text-gray-300">Cloud (AWS Basics)</span> -->
-                    <!-- </div> -->
                 </div>
             </div>
-        </section>
+
+            <div>
+                <h3 class="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300 border-b-2 border-indigo-500 pb-2">Data Science Skills</h3>
+                <div class="flex flex-wrap gap-6">
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-chart-area text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Data Visualization</span>
+                    </div>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-broom text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Data Cleaning</span>
+                    </div>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-bullseye text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">KPI Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <h3 class="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300 border-b-2 border-indigo-500 pb-2">Programming, ML & Database</h3>
+                <div class="flex flex-wrap gap-6">
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fab fa-python text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Python</span>
+                    </div>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-table text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Pandas</span>
+                    </div>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-calculator text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">NumPy</span>
+                    </div>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-chart-bar text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">Matplotlib</span>
+                    </div>
+                    <div class="skill-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-1 min-w-[120px]">
+                        <i class="fas fa-database text-4xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
+                        <span class="block font-semibold text-sm text-gray-700 dark:text-gray-300">SQL</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
         <section id="projects" class="projects-section section py-16 md:py-24 bg-white dark:bg-gray-800">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">My Projects</h2>
+                <h2
+                    class="section-title text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+                    My Projects</h2>
                 <div class="projects-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105">
-                        <img src="https://placehold.co/400x250/818CF8/FFFFFF?text=UPI Transaction Dashboard" alt="E-commerce Website Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x250/cccccc/333333?text=Project+Image'; this.alt='Placeholder for E-commerce project';">
+                    <div
+                        class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105">
+                        <img src="https://placehold.co/400x250/818CF8/FFFFFF?text=UPI Transaction Dashboard"
+                            alt="E-commerce Website Project" class="w-full h-48 object-cover"
+                            onerror="this.src='https://placehold.co/400x250/cccccc/333333?text=Project+Image'; this.alt='Placeholder for E-commerce project';">
                         <div class="project-info p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold mb-2 text-indigo-700 dark:text-indigo-400">UPI Transaction Analysis</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Designed KPIs and dashboards to track adoption trends, supporting business decision-making and customer engagement strategies.</p>
+                            <h3 class="text-xl font-semibold mb-2 text-indigo-700 dark:text-indigo-400">UPI Transaction
+                                Analysis</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Designed KPIs and
+                                dashboards to track adoption trends, supporting business decision-making and customer
+                                engagement strategies.</p>
                             <div class="project-tags mb-4 space-x-2">
-                                <span class="tag bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Power BI</span>
-                
+                                <span
+                                    class="tag bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Power
+                                    BI</span>
+
                             </div>
                             <div class="project-links mt-auto flex space-x-3">
-<!--                                 <a href="#" target="_blank" class="btn btn-small text-sm bg-gray-700 hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 text-white py-2 px-4 rounded-md transition-colors"><i class="fab fa-github mr-2"></i>GitHub</a> -->  
-                                <a href="https://app.powerbi.com/groups/me/reports/7b126262-8fc7-4442-94a7-b2c590e3de6b/d503c14eb4776c9ca9f3?experience=power-bi&bookmarkGuid=f93a7a250e41147f186e" target="_blank" class="btn btn-small text-sm bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded-md transition-colors"><i class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
+                                <a href="https://app.powerbi.com/groups/me/reports/7b126262-8fc7-4442-94a7-b2c590e3de6b/d503c14eb4776c9ca9f3?experience=power-bi&bookmarkGuid=f93a7a250e41147f186e"
+                                    target="_blank"
+                                    class="btn btn-small text-sm bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded-md transition-colors"><i
+                                        class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
                             </div>
                         </div>
                     </div>
-                     <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105">
-                        <img src="https://placehold.co/400x250/FBBF24/FFFFFF?text=Insurance Data Analysis Dashboard" alt="Data Analysis Dashboard Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x250/cccccc/333333?text=Project+Image'; this.alt='Placeholder for Data Analysis project';">
+                    <div
+                        class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105">
+                        <img src="https://placehold.co/400x250/FBBF24/FFFFFF?text=Insurance Data Analysis Dashboard"
+                            alt="Data Analysis Dashboard Project" class="w-full h-48 object-cover"
+                            onerror="this.src='https://placehold.co/400x250/cccccc/333333?text=Project+Image'; this.alt='Placeholder for Data Analysis project';">
                         <div class="project-info p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold mb-2 text-amber-600 dark:text-amber-400">Insurance Data Analysis</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Developed interactive Power BI dashboards to monitor claims, premiums, and policy performance trends.</p>
+                            <h3 class="text-xl font-semibold mb-2 text-amber-600 dark:text-amber-400">Insurance Data
+                                Analysis</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">Developed interactive
+                                Power BI dashboards to monitor claims, premiums, and policy performance trends.</p>
                             <div class="project-tags mb-4 space-x-2">
-            
-                                <span class="tag bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Power BI</span>
+
+                                <span
+                                    class="tag bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Power
+                                    BI</span>
                             </div>
                             <div class="project-links mt-auto flex space-x-3">
-<!--                                 <a href="#" target="_blank" class="btn btn-small text-sm bg-gray-700 hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 text-white py-2 px-4 rounded-md transition-colors"><i class="fab fa-github mr-2"></i>GitHub</a> -->
-                                <a href="https://app.powerbi.com/groups/me/reports/0e5259aa-ed97-4d2c-9b65-50049bf9ccf9/4bbe41eb33bcc6e60cc9?experience=power-bi" target="_blank" class="btn btn-small text-sm bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-md transition-colors"><i class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
+                                <a href="https://app.powerbi.com/groups/me/reports/0e5259aa-ed97-4d2c-9b65-50049bf9ccf9/4bbe41eb33bcc6e60cc9?experience=power-bi"
+                                    target="_blank"
+                                    class="btn btn-small text-sm bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-md transition-colors"><i
+                                        class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105">
-                        <img src="https://placehold.co/400x250/34D399/FFFFFF?text=Sales Data Analysis Dashboard" alt="Sales Analysis Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x250/cccccc/333333?text=Project+Image'; this.alt='Placeholder for Portfolio project';">
+                    <div
+                        class="project-card bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105">
+                        <img src="https://placehold.co/400x250/34D399/FFFFFF?text=Sales Data Analysis Dashboard"
+                            alt="Sales Analysis Project" class="w-full h-48 object-cover"
+                            onerror="this.src='https://placehold.co/400x250/cccccc/333333?text=Project+Image'; this.alt='Placeholder for Portfolio project';">
                         <div class="project-info p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold mb-2 text-emerald-600 dark:text-emerald-400">Sales Data Analysis</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow"> Built dashboards to analyze revenue, profitability, and sales performance trends. </p>
+                            <h3 class="text-xl font-semibold mb-2 text-emerald-600 dark:text-emerald-400">Sales Data
+                                Analysis</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow"> Built dashboards to
+                                analyze revenue, profitability, and sales performance trends. </p>
                             <div class="project-tags mb-4 space-x-2">
-                                <span class="tag bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Power BI</span>
-                                <!-- <span class="tag bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Tailwind CSS</span> -->
-                                <!-- <span class="tag bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span> -->
+                                <span
+                                    class="tag bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Power
+                                    BI</span>
                             </div>
                             <div class="project-links mt-auto flex space-x-3">
-                                <!-- <a href="https://app.powerbi.com/groups/me/reports/5dd3195f-dda0-4f6c-831c-1af80d95d768/28f1684d080effd68fe5?experience=power-bi" target="_blank" class="btn btn-small text-sm bg-gray-700 hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 text-white py-2 px-4 rounded-md transition-colors"><i class="fab fa-github mr-2"></i>GitHub</a> -->
-                                <a href="https://app.powerbi.com/groups/me/reports/5dd3195f-dda0-4f6c-831c-1af80d95d768/28f1684d080effd68fe5?experience=power-bi" class="btn btn-small text-sm bg-emerald-500 hover:bg-emerald-600 text-white py-2 px-4 rounded-md transition-colors"><i class="fas fa-external-link-alt mr-2"></i>View Demo</a> 
+                                <a href="https://app.powerbi.com/groups/me/reports/5dd3195f-dda0-4f6c-831c-1af80d95d768/28f1684d080effd68fe5?experience=power-bi"
+                                    class="btn btn-small text-sm bg-emerald-500 hover:bg-emerald-600 text-white py-2 px-4 rounded-md transition-colors"><i
+                                        class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -278,7 +387,8 @@
 
         <section id="contact" class="contact-section section py-16 md:py-24 bg-gray-100 dark:bg-gray-900">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-6 text-gray-800 dark:text-white">Get In Touch</h2>
+                <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-6 text-gray-800 dark:text-white">
+                    Get In Touch</h2>
                 <p class="contact-intro text-center text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
                     I'm currently looking for new opportunities, and my inbox is always open.
                     Whether you have a question or just want to say hi, I'll try my best to get back to you!
@@ -287,7 +397,8 @@
                     <div class="contact-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                         <i class="fas fa-envelope text-3xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
                         <h4 class="font-semibold text-lg mb-1 text-gray-700 dark:text-gray-300">Email</h4>
-                        <a href="mailto:tdhanushree22@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:underline">tdhanushree22@gmail.com</a>
+                        <a href="mailto:tdhanushree22@gmail.com"
+                            class="text-indigo-600 dark:text-indigo-400 hover:underline">tdhanushree22@gmail.com</a>
                     </div>
                     <div class="contact-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                         <i class="fas fa-map-marker-alt text-3xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
@@ -297,34 +408,53 @@
                     <div class="contact-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                         <i class="fab fa-linkedin text-3xl text-indigo-500 dark:text-indigo-400 mb-3"></i>
                         <h4 class="font-semibold text-lg mb-1 text-gray-700 dark:text-gray-300">LinkedIn</h4>
-                        <a href="https://www.linkedin.com/in/dhanushree-thiruveragan-157a49265/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">Dhanushree Thiruveragan</a>
+                        <a href="https://www.linkedin.com/in/dhanushree-thiruveragan-157a49265/" target="_blank"
+                            class="text-indigo-600 dark:text-indigo-400 hover:underline">Dhanushree Thiruveragan</a>
                     </div>
                 </div>
 
-                <div id="contact-form-section" class="contact-form-container max-w-3xl mx-auto bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl">
-                    <h3 class="form-title text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">Send Me a Message</h3>
+                <div id="contact-form-section"
+                    class="contact-form-container max-w-3xl mx-auto bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl">
+                    <h3
+                        class="form-title text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
+                        Send Me a Message</h3>
                     <form id="contactForm" action="https://formspree.io/f/xwpozljl" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
-                                <input type="text" id="name" class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500" name="name" placeholder="Your Name" required>
+                                <label for="name"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full
+                                    Name</label>
+                                <input type="text" id="name"
+                                    class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500"
+                                    name="name" placeholder="Your Name" required>
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address</label>
-                                <input type="email" id="email" class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500" name="email" placeholder="Your Email" required>
+                                <label for="email"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email
+                                    Address</label>
+                                <input type="email" id="email"
+                                    class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500"
+                                    name="email" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
-                            <input type="text" id="subject" class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500" name="subject" placeholder="Subject" required>
+                            <label for="subject"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+                            <input type="text" id="subject"
+                                class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500"
+                                name="subject" placeholder="Subject" required>
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-                            <textarea id="message" class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            <label for="message"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            <textarea id="message"
+                                class="form-control block w-full px-4 py-3 rounded-md shadow-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500"
+                                name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
                         <input type="hidden" name="_replyto" value="">
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-transform duration-150 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 flex items-center justify-center mx-auto min-w-[180px]">
+                            <button type="submit"
+                                class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-transform duration-150 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 flex items-center justify-center mx-auto min-w-[180px]">
                                 Send Message
                             </button>
                         </div>
@@ -338,22 +468,30 @@
     <footer class="footer-section py-12 bg-gray-800 dark:bg-black text-gray-400 dark:text-gray-500">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="footer-socials flex justify-center space-x-6 mb-6">
-                <a href="https://www.linkedin.com/in/dhanushree-thiruveragan-157a49265/" target="_blank" aria-label="LinkedIn" class="hover:text-indigo-400 text-xl transition-colors"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/dhanushree162004" target="_blank" aria-label="GitHub" class="hover:text-indigo-400 text-xl transition-colors"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/__.dhanushree.__/" target="_blank" aria-label="Instagram" class="hover:text-indigo-400 text-xl transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/dhanushree-thiruveragan-157a49265/" target="_blank"
+                    aria-label="LinkedIn" class="hover:text-indigo-400 text-xl transition-colors"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/dhanushree162004" target="_blank" aria-label="GitHub"
+                    class="hover:text-indigo-400 text-xl transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/__.dhanushree.__/" target="_blank" aria-label="Instagram"
+                    class="hover:text-indigo-400 text-xl transition-colors"><i class="fab fa-instagram"></i></a>
             </div>
             <p class="text-sm">&copy; <span id="currentYear"></span> Dhanushree T. All rights reserved.</p>
             <p class="text-sm">Designed with <i class="fas fa-heart text-indigo-500"></i></p>
         </div>
     </footer>
 
-    <button id="back-to-top" title="Go to top" class="fixed bottom-5 right-5 z-50 p-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg transition-opacity duration-300 opacity-0 hidden print:hidden">
+    <button id="back-to-top" title="Go to top"
+        class="fixed bottom-5 right-5 z-50 p-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg transition-opacity duration-300 opacity-0 hidden print:hidden">
         <i class="fas fa-arrow-up"></i>
     </button>
+</body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
         // --- Theme Toggle ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement; // Target the <html> element for 'dark' class
@@ -403,14 +541,14 @@
                 }
             });
         }
-        
+
         // --- Smooth Scroll & Active Link Highlighting ---
         const navbar = document.getElementById('navbar');
         const navbarHeight = navbar ? navbar.offsetHeight : 70;
         const allNavLinks = document.querySelectorAll('.nav-link');
 
         allNavLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href && href.startsWith('#')) {
                     // e.preventDefault(); // HTML smooth scroll handles this if set
@@ -433,7 +571,7 @@
                 }
             });
         });
-        
+
         const sections = Array.from(document.querySelectorAll('section.section[id]'));
         function changeLinkState() {
             let currentSectionId = '';
@@ -446,10 +584,10 @@
                     break;
                 }
             }
-            
+
             // If no section is found (e.g., at the very top before any section), default to home
             if (!currentSectionId && sections.length > 0 && window.pageYOffset < sections[0].offsetTop) {
-                 currentSectionId = "home";
+                currentSectionId = "home";
             }
 
 
@@ -531,7 +669,7 @@
                         value: 50
                     },
                     opacity: {
-                        value: {min: 0.1, max: 0.5}
+                        value: { min: 0.1, max: 0.5 }
                     },
                     shape: { type: "circle" },
                     size: {
@@ -551,7 +689,7 @@
         const formStatusDiv = document.getElementById('form-status');
 
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
+            contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const formData = new FormData(contactForm);
                 const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -559,47 +697,48 @@
 
                 submitButton.disabled = true;
                 submitButton.innerHTML = '<span class="spinner-border" role="status" aria-hidden="true"></span> Sending...';
-                
-                if(formStatusDiv) formStatusDiv.innerHTML = '';
+
+                if (formStatusDiv) formStatusDiv.innerHTML = '';
 
                 fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 })
-                .then(response => {
-                    if (response.ok) return response.json();
-                    return response.json().then(errData => { throw new Error(errData.error || 'Form submission failed.')});
-                })
-                .then(data => {
-                    if (data.ok) {
-                        if(formStatusDiv) {
-                            formStatusDiv.textContent = "Message sent successfully! Thank you for reaching out.";
-                            formStatusDiv.className = 'mt-4 text-center text-sm success'; // Tailwind classes in CSS
+                    .then(response => {
+                        if (response.ok) return response.json();
+                        return response.json().then(errData => { throw new Error(errData.error || 'Form submission failed.') });
+                    })
+                    .then(data => {
+                        if (data.ok) {
+                            if (formStatusDiv) {
+                                formStatusDiv.textContent = "Message sent successfully! Thank you for reaching out.";
+                                formStatusDiv.className = 'mt-4 text-center text-sm success'; // Tailwind classes in CSS
+                            } else {
+                                alert("Message sent successfully! Thank you for reaching out.");
+                            }
+                            contactForm.reset();
                         } else {
-                            alert("Message sent successfully! Thank you for reaching out.");
+                            throw new Error(data.error || 'Failed to send message. Please try again.');
                         }
-                        contactForm.reset();
-                    } else {
-                        throw new Error(data.error || 'Failed to send message. Please try again.');
-                    }
-                })
-                .catch(error => {
-                    console.error("Form submission error:", error);
-                    if(formStatusDiv) {
-                        formStatusDiv.textContent = `Error: ${error.message}`;
-                        formStatusDiv.className = 'mt-4 text-center text-sm error'; // Tailwind classes in CSS
-                    } else {
-                        alert(`Error: ${error.message}`);
-                    }
-                })
-                .finally(() => {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalButtonHTML;
-                });
+                    })
+                    .catch(error => {
+                        console.error("Form submission error:", error);
+                        if (formStatusDiv) {
+                            formStatusDiv.textContent = `Error: ${error.message}`;
+                            formStatusDiv.className = 'mt-4 text-center text-sm error'; // Tailwind classes in CSS
+                        } else {
+                            alert(`Error: ${error.message}`);
+                        }
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonHTML;
+                    });
             });
         }
     });
-    </script>
+</script>
 </body>
+
 </html>
